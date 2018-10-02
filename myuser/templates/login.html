@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.img-wrapper {
+  position: relative;
+ }
+
+.img-responsive {
+  width: 100%;
+  height: auto;
+}
+
+.img-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+<!--
+.img-overlay:before {
+  content: ' ';
+  display: block;
+  /* adjust 'height' to position overlay content vertically */
+  height: 5%;
+}
+-->
+
+</style>
+</head>
+
+<body>
+<div class="img-wrapper">
+    <img class="img-responsive" src="{% static 'images/mountains.jpg' %}">
+    <div class="img-overlay">
+<button onclick="window.location.href='/'" id="homeid" name="homebtn">Home</button>
+     </br>
+     </br>
+     </br>
+     <h1>user login</h1>
+     </br>
+     <h3 style="color:red;" id="errorid" name="errormsg">{{ error }}</h3>
+     <form action="/login/" method="POST">
+        {% csrf_token %}
+        <label>username:</label> <input type="text" id="uid" name="username" value="{{username}}" />
+        </br>
+        </br>
+        <label>password:</label> <input type="password" id="pid" name="password" value="{{password}}"/>
+        </br>
+        </br>
+        <input type="submit" id="loginid" name="loginbtn" value="login"/>
+     </form>
+    </div>
+</div>
+
+</body>
+</html>

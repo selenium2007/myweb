@@ -1,0 +1,27 @@
+<html>
+  <head>
+     <meta charset="utf-8" />
+     <title>exercise</title>
+  </head>
+  <body>
+    <h3 style="color:green" id="messageid" name="message">{{username}}, you just logged in successfully</h3>
+    <table>
+      <thead>
+         <tr>
+            <th><h3>exercise link</h3></th>
+         </tr>
+      </thead>
+      <tbody>
+       {% for pic in pics %}
+         <tr>
+            <td><a href="/under_construction/">{{pic}}</a></td>
+         </tr>
+       {% endfor %}
+      </tbody>
+    </table>
+
+    </br>
+    </br>
+    <button onclick="window.location.href='/require_login'" id="logoutid" name="logoutbtn">Logout</button>
+  </body>
+</html>

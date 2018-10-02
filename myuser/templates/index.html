@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>myuser</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.img-wrapper {
+  position: relative;
+ }
+
+.img-responsive {
+  width: 100%;
+  height: auto;
+}
+
+.img-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: right;
+}
+
+<!--
+.img-overlay:before {
+  content: ' ';
+  display: block;
+  /* adjust 'height' to position overlay content vertically */
+  height: 5%;
+}
+-->
+
+</style>
+</head>
+<body>
+<div class="img-wrapper">
+    <img class="img-responsive" src="{% static 'images/italy.jpg' %}">
+    <div class="img-overlay">
+       <button onclick="window.location.href='/require_login/'" id="loginid" name="loginbtn">Login</button>
+       <button onclick="window.location.href='/require_register/'" id="registerid" name="registerbtn">Register</button>
+       <button onclick="window.location.href='/under_construction/'" id="infoid" name="infobtn">Info</button>
+       <button onclick="window.location.href='/under_construction/'" id="contactid" name="contactbtn">Contact</button>
+       <button onclick="window.location.href='/under_construction/'" id="aboutid" name="aboutbtn">About</button>
+    </div>
+</div>
+
+</body>
+</html>

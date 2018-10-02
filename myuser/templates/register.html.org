@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <meta charset="utf-8" />
+     <title>register</title>
+  </head>
+  <body>
+     <button onclick="window.location.href='/'" id="homebtn">Home</button>
+     </br>
+     </br>
+     </br>
+     <h1>user register</h1>
+     </br>
+     <h3 style="color:red;">{{ error }}</h3>
+     <form action="/register/" method="POST">
+        {% csrf_token %}
+        <label>username:</label> <input type="text" id="uid" name="username" value="{{username}}" />
+        </br>
+        </br>
+        <label>email:</label> <input type="text" id="eid" name="email" value="{{email}}" />
+        </br>
+        </br>
+        <label>password:</label> <input type="password" id="pid" name="password" value="{{password}}"/>
+        </br>
+        </br>
+        <label>password again:</label> <input type="password" id="pid2" name="password2" value="{{password2}}"/>
+        </br>
+        </br>
+        <input type="submit" id="registerbtn" value="register"/>
+     </form>
+
+  </body>
+</html>
