@@ -16,6 +16,7 @@ def dump_users(path,users):
    fh.close()
 
 
+
 if __name__ == '__main__':
    if len(sys.argv) != 3:
       print "Wrong number of arguments"
@@ -26,3 +27,8 @@ if __name__ == '__main__':
    users=load_users(jsonfile)
    users.pop(name,None)
    dump_users(jsonfile,users)
+   #print "The following user(s) are(is) existing now after deleting user" 
+   #for user in users:
+   #   print user
+
+
